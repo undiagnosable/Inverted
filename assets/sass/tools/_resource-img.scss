@@ -1,0 +1,6 @@
+@function img($file) {
+	@if $is-docs == true {
+		@return unquote('url("../img/' + $file + '")');
+	}
+	@return unquote('url("/img/' + $file + '")');
+}

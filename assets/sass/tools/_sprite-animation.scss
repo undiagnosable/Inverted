@@ -1,0 +1,19 @@
+
+@mixin sprite-animation($opts, $i: 1) {
+	$name: map-get($opts, name);
+	$frames: map-get($opts, frames);
+	$step: 100 / $frames;
+	$width: map-get($opts, width);
+	$height: map-get($opts, height);
+	$pos-y: $frames * $height;
+	$pos-x: ($i - 1) * $width;
+
+	@include keyframes($name + '-' + $i) {
+		0% {
+			background-position: -$pos-x 0;
+		}
+		100% {
+			background-position: -$pos-x #{-$pos-y};
+		}
+	}
+}

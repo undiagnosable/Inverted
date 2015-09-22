@@ -1,0 +1,27 @@
+@function class($component) {
+  @return #{$prefix}#{$component};
+}
+
+@mixin module($name, $prefix: $prefix) {
+    .#{$prefix}#{$name} {
+        @content;
+    }
+}
+
+@mixin sub-module($submodule, $divide: '-') {
+    &#{$divide}#{$submodule} {
+        @content;
+    }
+}
+
+@mixin modifier($modifier, $divide: '--') {
+    &#{$divide}#{$modifier} {
+        @content;
+    }
+}
+
+@mixin state($state, $prefix: 'is') {
+    &.#{$prefix}-#{$state} {
+        @content;
+    }
+}

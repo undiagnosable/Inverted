@@ -1,0 +1,9 @@
+@mixin intrinsic($width, $height, $overflow: hidden) {
+	position: relative;
+	overflow: $overflow;
+	&:before {
+		content: "";
+		display: block;
+		padding-top: percentage($height/$width);
+	}
+}

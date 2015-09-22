@@ -1,0 +1,16 @@
+@function grid($size, $cols) {
+	@return ($size/$cols) * 100%;
+}
+
+@mixin row() {
+	@include clearfix();
+	max-width: $grid-size;
+	margin: auto;
+}
+
+@mixin grid($size: 12, $columns: $grid-count, $gutter: $grid-gutter) {
+	float: left;
+	padding: 0 $gutter/2;
+	min-height: 1px;
+	width: grid($size, $columns);
+}

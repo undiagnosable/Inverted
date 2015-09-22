@@ -1,0 +1,3 @@
+@mixin bg-size($width: cover, $height: null) {
+	@include vendorize(background-size, $width $height);
+}

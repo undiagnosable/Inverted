@@ -1,0 +1,16 @@
+$vendors: 'webkit', 'moz', 'ms'; // 'webkit', 'moz', 'ms', 'o', 'khtml';
+/// @summary Repeat for multiple vendor prefixes, like prefix-free processor
+/// @param $property the property to repeat
+/// @param $noplain set 'true' to disable prefixless option
+/// @param $vendors override the global vendor list
+/// @param $prefix optional additional prefix; supposed to allow keyframe specification with `@`
+/// 
+/// @see http://css-tricks.com/redesigning-with-sass/ for references
+@mixin vendorize($property, $value, $noplain: false, $vendors: $vendors, $prefix:'') {
+	@each $vendor in $vendors {
+		#{$prefix}-#{$vendor}-#{$property}: $value;
+	}
+	@if $noplain != true {
+		#{$property}: $value;
+	}
+}
