@@ -120,10 +120,3 @@ $color-brightness: 10%;
 @function lighter($c) {
 	@return lighten(color($c), $color-brightness);
 }
-
-// Bootstrap settings
-$body-bg: #f3f5f9;
-
-$text-color: color(primary);
-
-$link-color: color(link);
